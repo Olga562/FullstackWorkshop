@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS example</title>
+</head>
+<body>
+    <%- include('_header') %> <!--exercise 3-->
+    <h1> <%= message %></h1><!--exercise 2-->
+    <% if (isLoggedIn) { %><!--exercise 4-->
+        <p>You are logged in!</p>
+        <h2>Users list:</h2>
+        <ul>
+            <% users.forEach(user => { %>
+                <li>Name: <%= user.name %>  Age: <%= user.age%></li>
+            <% }) %>
+        </ul>
+    <% } else{ %>
+        <p>Please log in</p>
+    <% } %>
+    <%- include('_footer') %><!--exercise 3-->
+</body>
+</html>
